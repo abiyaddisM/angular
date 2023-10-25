@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
+import {Lists} from "./Lists.service";
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template:`
+  <app-headers></app-headers>
+  `,
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular';
+  title="List";
+  lists=["one","two","three"];
+  constructor(value:Lists) {
+    this.lists=value.names;
+  }
 }
